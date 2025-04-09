@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" href="imagen/job.jpg" type="image/jpg">
+        <title>Mr. Radiante</title>
+    </head>
+    <body>
+      <div id="navbar-servicio"></div>
+      <h1>Sevicios</h1>
+      <script>
+        fetch('navbar.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('navbar-servicio').innerHTML = data;
+          });
+   // 🧪 Hacemos una petición HTTP para cargar el archivo navbar.html
+        fetch("navbar.html")
+
+// 🔄 Convertimos la respuesta en texto (el contenido HTML)
+          .then(response => response.text())
+
+// 📦 Usamos el contenido recibido (data) para insertarlo en la página
+          .then(data => {
+
+  // 🎯 Insertamos el HTML del navbar dentro del contenedor con ID "navbar-container"
+             document.getElementById("navbar-servicio").innerHTML = data;
+
+  // 📌 Seleccionamos el botón hamburguesa ya cargado dentro del navbar
+             const hamburger = document.getElementById("hamburger");
+
+  // 📌 Seleccionamos el menú de navegación
+             const navbar = document.getElementById("navbar");
+
+  // 👂 Escuchamos cuando se hace clic en el botón hamburguesa
+             hamburger.addEventListener("click", () => {
+
+    // 🎬 Alternamos la clase "active" al menú para mostrarlo u ocultarlo
+              navbar.classList.toggle("active");
+  });
+
+});
+
+      </script>
+    </body>
+</html>
